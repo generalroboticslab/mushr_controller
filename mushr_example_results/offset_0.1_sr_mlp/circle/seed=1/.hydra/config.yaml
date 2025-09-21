@@ -1,0 +1,46 @@
+algorithm:
+  package: _group_
+  name: pets
+  normalize: false
+dynamics_model:
+  _target_: sym2real.dynamics_model.Residual
+  model_a: symbolic_regression
+  model_a_path: /home/generalroboticslab/Desktop/sym2real/01_from_scratch_mushr_sr_85/MushrCar-v0/hover/env_params_mass_0.027_wheel_left/seed_1/symbolic_regression/2025.08.06:040815
+  model_b:
+    _target_: sym2real.dynamics_model.GaussianMLP
+    ensemble_size: 1
+    deterministic: true
+    num_layers: 4
+    in_size: ${..in_size}
+    out_size: ${..out_size}
+    action_type: attitude_rate
+  in_size: ???
+  out_size: ???
+  seed: ${seed}
+  enable_spearman: true
+overrides:
+  env: MushrCar-v0
+  trial_length: 400
+  model_update_freq: 400
+  num_steps: 8000
+  model_batch_size: 256
+  validation_ratio: 0.2
+  patience: 15
+  model_lr: 0.0001
+  model_wd: 5.0e-05
+  initial_exploration_steps: 400
+  reference_type: circle
+  hover_position:
+  - 1.0
+  - 0.0
+  - 0.0
+action_optimizer: {}
+env_params:
+  mass: 0.027
+  wheel: friction_0.25
+seed: 1
+device: cuda
+log_frequency_agent: 1000
+save_video: false
+debug_mode: false
+root_dir: real_exp_results/offset_0.1_trial3each/

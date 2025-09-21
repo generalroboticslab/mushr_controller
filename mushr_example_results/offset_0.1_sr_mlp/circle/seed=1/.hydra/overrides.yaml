@@ -1,0 +1,2 @@
+- dynamics_model=residual_mlp
+- dynamics_model.model_a_path=/home/generalroboticslab/Desktop/sym2real/01_from_scratch_mushr_sr_85/MushrCar-v0/hover/env_params_mass_0.027_wheel_left/seed_1/symbolic_regression/2025.08.06:040815

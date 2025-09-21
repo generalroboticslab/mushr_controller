@@ -1,0 +1,18 @@
+.vscode/
+__pycache__/
+ros_ws/build/
+ros_ws/devel/
+*.csv
+*.csv.out*
+*.pkl
+*.mp4
+data_logs*
+*.png
+*results*/
+*.jpg
+old_scripts/
+
+# Always track this folder and its contents
+!mushr_example_results/
+!mushr_example_results/offset_0.1_sr_mlp/
+!mushr_example_results/offset_0.1_sr_mlp/**
